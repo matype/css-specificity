@@ -1,0 +1,19 @@
+{
+  "name": "css-specificity",
+  "version": "0.0.1",
+  "description": "CSS selector specificity calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/morishitter/css-specificity/git"
+  },
+  "keywords": ["css","selector","specificity"],
+  "author": "Masaaki Morishita",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
