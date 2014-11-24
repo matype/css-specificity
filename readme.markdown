@@ -16,37 +16,41 @@ $ npm install css-specificity
 var specificity = require('css-specificity')
 
 var calc = specificity.calc('.class, p.sel:after')
-var a = specificity.a('.class, p.sel:after')
-var b = specificity.b('.class, p.sel:after')
-var c = specificity.c('.class, p.sel:after')
+var winner = specificity.vs('.class', 'p.sel:after')
 
 console.log(calc)
-// [ [ 0, 0, 1, 0 ], [ 0, 0, 1, 2 ] ]
-console.log(a)
-// [ 0, 0 ]
-console.log(b)
-// [ 1, 1 ]
-console.log(c)
-// [ 0, 2 ]
+/*
+[
+    {
+        'selector': '.class',
+        'specificity': [0, 0, 1, 0],
+        'a': 0,
+        'b': 1,
+        'c': 0
+    },
+    {
+        'selector': 'p.sel:after',
+        'specificity': [0, 0, 1, 2],
+        'a': 0,
+        'b': 1,
+        'c': 2
+    }
+]
+*/
+
+console.log(winner)
+// 'p.sel:after'
 ```
 
 ## API
 
 ### `specificity.calc(selector)`
 
-return [specimen calculation result](https://github.com/brettstimmerman/specimen#usage)
+return caluculation result.
 
-### `specificity.a(selector)`
+### `specificity.vs(selector1, selector2)`
 
-return count the number of ID selectors in the selector
-
-### `specificity.b(selector)`
-
-return count the number of class selectors, attributes selectors, and pseudo-classes in the selector
-
-### `specificity.c(selector)`
-
-return count the number of type selectors and pseudo-elements in the selector
+return selector has higher specificity.
 
 ## License
 
