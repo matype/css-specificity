@@ -4,7 +4,7 @@
   "description": "CSS selector specificity calculator",
   "main": "index.js",
   "scripts": {
-    "test": "tape test"
+    "test": "colored-tape test"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "dependencies": {
     "specimen": "^0.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "colored-tape": "^1.0.1",
+    "tap": "^0.4.13"
+  }
 }
